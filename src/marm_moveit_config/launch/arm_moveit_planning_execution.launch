@@ -13,5 +13,10 @@
     <param name="/use_gui" value="false"/> 
     <rosparam param="/source_list">[/arm/joint_states]</rosparam>
   </node>
+  <arg name="sim" default="true" />
+  <!-- Remap follow_joint_trajectory -->
+  <remap if="$(arg sim)" from="/scaled_pos_joint_traj_controller/follow_joint_trajectory" to="/pos_joint_traj_controller/follow_joint_trajectory"/>
+
 
 </launch>
+
